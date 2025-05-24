@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  ddns:
+    image: ddns:latest
+    container_name: ddns-service
+    restart: unless-stopped
+    environment:
+      - CF_API_TOKEN=${CF_API_TOKEN}
+      - DOMAIN=${DOMAIN}
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - ddns-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  ddns-network:
+    driver: bridge
+
+volumes:
+  ddns-logs:

@@ -1,0 +1,28 @@
+# Git相关文件
+.git
+.gitignore
+
+# Docker相关文件
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# 日志文件
+*.log
+logs/
+
+# 编译产物
+ddns
+*.exe
+
+# IDE文件
+.vscode/
+.idea/
+
+# 临时文件
+*.tmp
+*.swp
+.DS_Store
+
+# 测试文件
+*_test.go
