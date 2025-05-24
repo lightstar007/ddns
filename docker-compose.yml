@@ -2,8 +2,9 @@ version: '3.8'
 
 services:
   ddns:
-    image: ddns:latest
-    container_name: ddns-service
+    # image: ddns:latest
+    image: ghcr.io/lightstar007/ddns:latest
+    container_name: ddns
     restart: unless-stopped
     environment:
       - CF_API_TOKEN=${CF_API_TOKEN}
